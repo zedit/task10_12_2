@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  proxy:
+    image: nginx:1.13
+    volumes:
+      - ./etc/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
+      - ./certs:/etc/nginx/certs/:ro
+      - /srv/log/nginx/access.log:/var/log/nginx/access.log
+    ports:
+      - "17080:443"
+  web: 
+    image: httpd:2.4
+  
+

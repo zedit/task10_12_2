@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  proxy:
+    image: SED_NGINX_IMAGE
+    volumes:
+      - ./etc/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
+      - ./certs:/etc/nginx/certs/:ro
+      - SED_NGINX_LOG_DIR/access.log:/var/log/nginx/access.log
+    ports:
+      - "SED_NGINX_PORT:443"
+  web: 
+    image: SED_APACHE_IMAGE
+  
+

@@ -1,0 +1,9 @@
+# Host parameters
+EXTERNAL_IP=192.168.122.99
+HOST_NAME=jFrog
+
+# Docker parameters
+NGINX_IMAGE="nginx:1.13"
+APACHE_IMAGE="httpd:2.4"
+NGINX_PORT=17080
+NGINX_LOG_DIR=/srv/log/nginx
