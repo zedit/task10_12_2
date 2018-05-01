@@ -6,7 +6,7 @@ services:
     volumes:
       - ./etc/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
       - ./certs:/etc/nginx/certs/:ro
-      - SED_NGINX_LOG_DIR/access.log:/var/log/nginx/access.log
+      - SED_NGINX_LOG_DIR:/var/log/nginx
     ports:
       - "SED_NGINX_PORT:443"
   web: 
