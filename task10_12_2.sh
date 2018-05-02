@@ -47,7 +47,6 @@ function run_docker_compose {
   if ! [ -d ${NGINX_LOG_DIR} ]; then
     mkdir -p /srv/log/nginx
   fi
-  touch ${NGINX_LOG_DIR}/access.log
   local template_path="templates/docker-compose.yml.template"
   cp ${template_path} docker-compose.yml
   sed -i "s/SED_NGINX_IMAGE/${NGINX_IMAGE}/" docker-compose.yml
