@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x
+
 source config
 path_to_workir=$(pwd)
 ssl_cert="${path_to_workir}/certs/web.crt"
@@ -53,7 +53,7 @@ function run_docker_compose {
   sed -i "s/SED_APACHE_IMAGE/${APACHE_IMAGE}/" docker-compose.yml
   sed -i "s/SED_NGINX_PORT/${NGINX_PORT}/" docker-compose.yml
   sed -i "s#SED_NGINX_LOG_DIR#${NGINX_LOG_DIR}#" docker-compose.yml
-  docker-compose up
+  docker-compose up -d
 }
 
 docker_install
