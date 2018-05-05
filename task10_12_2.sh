@@ -40,7 +40,6 @@ EOF
   openssl genrsa -out "${ssl_cert_key}" 2048
   openssl req -new -out "${ssl_csr}" -key "${ssl_cert_key}" -subj "/C=UA/ST=Kharkov/L=Kharkov/O=homework/OU=task6_7/CN=${HOSTNAME}/"
   openssl x509 -req -in "${ssl_csr}" -CA "${root_cert}" -CAkey "${root_cert_key}" -CAcreateserial -out "${ssl_cert}" -extensions v3_req -extfile "${ssl_conf}"
-  cat "${ssl_cert}" "${root_cert}" > ${ssl_cert_chain}
 }
 
 function run_docker_compose {
